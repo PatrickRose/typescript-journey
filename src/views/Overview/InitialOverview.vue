@@ -23,7 +23,7 @@
             Here's some normal Javascript!
         </p>
 
-        <CodeBlock file-path="example-code/Overview/basic-js.js"/>
+        <CodeBlock :contents="basicJS"/>
 
         <p>
             The main value that Typescript provides over Javascript is its Type System, where it knows what
@@ -32,10 +32,30 @@
 
         <p>You do this with a colon after the definition</p>
 
-        <CodeBlock file-path="example-code/Overview/basic-ts.ts"/>
+        <CodeBlock :contents="basicTS"/>
     </div>
 </template>
 
 <script setup lang="ts">
 import CodeBlock from "@/components/CodeBlock.vue";
+
+const basicTS = `const typedString: string = 'Test';
+
+// For functions, each param has a type
+// The colon after the param list is the return value for the function
+function getLengthOfString(value: string): number {
+    return value.length;
+}
+
+const typedAddition: number = 1 + 2 + 3 + 4;`
+
+const basicJS = `const typedString: string = 'Test';
+
+// For functions, each param has a type
+// The colon after the param list is the return value for the function
+function getLengthOfString(value: string): number {
+    return value.length;
+}
+
+const typedAddition: number = 1 + 2 + 3 + 4;`
 </script>

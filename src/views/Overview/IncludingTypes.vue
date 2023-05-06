@@ -8,7 +8,7 @@
             If Typescript can guess the type of your variable based on context, it just will!
         </p>
 
-        <CodeBlock file-path="example-code/Overview/inferred-types.ts"/>
+        <CodeBlock :contents="inferredTypes"/>
 
         <p>
             This allows the compiler to spot mistakes, like when we try and add a string to a number, or assign the
@@ -60,4 +60,16 @@ const countNumberOfNumbersInStringCode = `function countNumberOfNumbersInString(
 
     return count;
 }`
+
+const inferredTypes = `function getLengthOfString(value: string): number {
+    return value.length;
+}
+
+// We know this has to be a string!
+const knownString = 'test';
+// No type error!
+getLengthOfString(knownString);
+
+// And because we know that getLengthOfString returns a number, inferredNumber has to be a number
+const inferredNumber = getLengthOfString('1');`
 </script>
