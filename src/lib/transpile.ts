@@ -1,8 +1,7 @@
 import {createProject, ts} from "@ts-morph/bootstrap";
-import type { Diagnostic } from "typescript";
 
 export async function compile(input: string): Promise<ReturnType<typeof ts["getPreEmitDiagnostics"]>> {
-    const project = await createProject({useInMemoryFileSystem: true});
+    const project = await createProject({useInMemoryFileSystem: true, compilerOptions: {lib: ['lib.esnext.d.ts']} });
 
     project.createSourceFile(
         'test.ts',
