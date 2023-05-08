@@ -10,10 +10,9 @@
             leave-to-class="-translate-y-full transition opacity-0 ease-in"
             mode="out-in"
         >
-            <button v-if="compilationResult === null" @click="compileCode()"
-                    class="p-2 border-2 border-sky-600 rounded-xl mx-2 hover:bg-sky-600">
+            <StandardButton v-if="compilationResult === null" :on-click="() => compileCode()">
                 Compile code
-            </button>
+            </StandardButton>
             <ul v-else-if="compilationResult?.length > 0" class="list-disc pl-8">
                 <li v-for="result in compilationResult">
                     {{ result }}
@@ -27,6 +26,7 @@
 import CodeBlock from "@/components/CodeBlock.vue";
 import {ref} from "vue";
 import {compile} from "@/lib/transpile";
+import StandardButton from "@/components/StandardButton.vue";
 
 type CodeBlockProps = {
     contents: string

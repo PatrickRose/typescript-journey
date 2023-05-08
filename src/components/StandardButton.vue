@@ -6,11 +6,11 @@
 </template>
 
 <script setup lang="ts">
-type PaginationButtonProps = {
-    onClick: () => void
+type StandardButtonProps = {
+    onClick?: () => void
 }
 
-const props = defineProps<PaginationButtonProps>();
+const props = defineProps<StandardButtonProps>();
 </script>
 
 <style scoped lang="scss">

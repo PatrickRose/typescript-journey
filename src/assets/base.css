@@ -11,6 +11,10 @@
         @apply bg-gray-800 text-white
     }
 
+    textarea {
+        @apply bg-slate-800 text-white
+    }
+
     h1 {
         @apply text-4xl
     }

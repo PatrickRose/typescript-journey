@@ -16,12 +16,12 @@
                 Page <strong>{{ currentPage + 1 }}</strong> of <strong>{{ $props.pages.length }}</strong>
             </div>
             <div>
-                <PaginationButton v-if="currentPage != 0" :on-click="() => currentPage--">
+                <StandardButton v-if="currentPage != 0" :on-click="() => currentPage--">
                     Previous
-                </PaginationButton>
-                <PaginationButton v-if="currentPage + 1 != $props.pages.length" :on-click="() => currentPage++">
+                </StandardButton>
+                <StandardButton v-if="currentPage + 1 != $props.pages.length" :on-click="() => currentPage++">
                     Next
-                </PaginationButton>
+                </StandardButton>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
 <script setup lang="ts">
 import type {Component} from "vue";
 import {ref} from "vue";
-import PaginationButton from "@/components/PaginationButton.vue";
+import StandardButton from "@/components/StandardButton.vue";
 
 type PageListProps = {
     pages: Component[]
